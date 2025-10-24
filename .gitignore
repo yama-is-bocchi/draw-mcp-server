@@ -1,2 +1,5 @@
 .mypy_cache
 .venv
+.clineignore
+.clinerules
+**/__pycache__/**
