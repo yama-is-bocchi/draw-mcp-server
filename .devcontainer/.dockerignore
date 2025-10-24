@@ -1,0 +1,5 @@
+.bash
+.extensions
+.mypy_cache
+.venv
+devcontainer.json

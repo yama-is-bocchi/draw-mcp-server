@@ -1,0 +1,55 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "dockerComposeFile": "compose.yaml",
+    "service": "dev",
+    "containerUser": "vscode",
+    "remoteUser": "vscode",
+    "updateRemoteUserUID": true,
+    "workspaceFolder": "/workspace",
+    "initializeCommand": "mkdir -p .devcontainer/.venv",
+    "postCreateCommand": "lefthook install",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "charliermarsh.ruff",
+                "lucien-martijn.parquet-visualizer",
+                "ms-python.mypy-type-checker",
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "njqdev.vscode-python-typehint",
+                "Percy.vscode-pydata-viewer",
+                "streetsidesoftware.code-spell-checker",
+                "tamasfe.even-better-toml"
+            ],
+            "settings": {
+                "remote.autoForwardPortsSource": "output",
+                "files.exclude": {
+                    "**/.devcontainer/.bash": true,
+                    "**/.devcontainer/.extensions": true,
+                    "**/.devcontainer/.venv": true,
+                    "**/.devcontainer/.mypy_cache": true
+                },
+                "files.watcherExclude": {
+                    "**/.devcontainer/.bash": true,
+                    "**/.devcontainer/.extensions": true,
+                    "**/.devcontainer/.venv": true,
+                    "**/.devcontainer/.mypy_cache": true
+                },
+                "search.exclude": {
+                    "**/.devcontainer/.bash": true,
+                    "**/.devcontainer/.extensions": true,
+                    "**/.devcontainer/.venv": true,
+                    "**/.devcontainer/.mypy_cache": true
+                },
+                "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+                "python.venvPath": "/workspace/.venv",
+                "ruff.path": [
+                    "/workspace/.venv/bin/ruff"
+                ],
+                "mypy-type-checker.path": [
+                    "/workspace/.venv/bin/mypy"
+                ]
+            }
+        }
+    }
+}
