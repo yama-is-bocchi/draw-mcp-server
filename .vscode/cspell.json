@@ -16,6 +16,7 @@
         "levelname",
         "venv",
         "fastmcp",
-        "streamable"
+        "streamable",
+        "dotenv"
     ]
 }

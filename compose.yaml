@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        UBUNTU_VERSION: 22.04
+        UV_VERSION: 0.8.17
+      dockerfile: Dockerfile
+    volumes:
+      - images:/workdir/data
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+
+volumes:
+  images:
