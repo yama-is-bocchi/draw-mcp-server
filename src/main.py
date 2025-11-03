@@ -14,7 +14,7 @@ async def main() -> None:
     # get api server
     api_server = APIServer(options.target_directory, options.username, options.password)
     # get mcp server
-    mcp_server = get_draw_mcp_server(options.host, options.port)
+    mcp_server = get_draw_mcp_server(options.target_directory, options.host, options.port)
     transport = cast(("Literal['stdio', 'http', 'sse', 'streamable-http'] | None"), options.mcp_transport)
     await asyncio.gather(
         api_server.start(options.host, options.port),

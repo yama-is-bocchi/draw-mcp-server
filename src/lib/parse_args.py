@@ -19,7 +19,7 @@ def parse_args() -> StartupOptions:
     parser.add_argument("--host", type=str, default="localhost", help="Host address where the server will run (default: localhost)")
     parser.add_argument("--port", type=int, default=8080, help="Port number for the server to listen on (default: 8080)")
     parser.add_argument("-d", "--directory", type=str, default="data", help="Source directory for generating PUML diagrams and serving image files")
-    parser.add_argument("-t", "--transport", type=str, help="MCP transport type", required=True)
+    parser.add_argument("-t", "--transport", type=str, help="MCP transport type only(sse or http or streamable-http)", required=True)
 
     args = parser.parse_args()
 
