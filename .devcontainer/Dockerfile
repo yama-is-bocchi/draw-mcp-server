@@ -72,8 +72,8 @@ RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
         unzip \
         xz-utils \
         zip \
-        libgl1-mesa-glx \
-        libglib2.0-0
+        openjdk-17-jre \
+        wget
 
 # install lefthook, gitleaks
 ARG LEFTHOOK_VERSION=1.11.3
@@ -97,6 +97,15 @@ RUN apt-get update && \
     apt-get install -y curl gettext-base && \
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     apt-get install -y nodejs
+
+# install PlantUML
+RUN apt-get update && apt-get install -y wget graphviz fonts-noto-cjk && rm -rf /var/lib/apt/lists/* && \
+    wget https://github.com/plantuml/plantuml/releases/latest/download/plantuml.jar \
+        -O /usr/local/bin/plantuml.jar && \
+    echo '#!/bin/sh' > /usr/local/bin/plantuml && \
+    echo 'exec java -Dfile.encoding=UTF-8 -jar /usr/local/bin/plantuml.jar "$@"' >> /usr/local/bin/plantuml && \
+    chmod 755 /usr/local/bin/plantuml && \
+    ln -s /usr/local/bin/plantuml /usr/local/bin/puml
 
 USER ${USERNAME}
 
