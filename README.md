@@ -1,6 +1,7 @@
 # draw-mcp-server
 
-A simple MCP (Model Context Protocol) server that can be easily run using Docker.
+This MCP server provides a tool for generating diagrams using PlantUML (puml) — no multi modal model required, as long as Docker is installed.  
+It offers a lightweight and easy-to-use environment for visualizing ideas and system designs directly through MCP.
 
 ## Usage
 
