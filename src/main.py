@@ -10,7 +10,8 @@ def main() -> None:
     # arguments parse
     options = parse_args()
     # start server
-    asyncio.run(APIServer("data", options.username, options.password).start("0.0.0.0", 8080))  # noqa: S104
+    asyncio.run(APIServer("data", options.username, options.password).start("localhost", 8080))
+    # TODO: start mcp server
 
 
 if __name__ == "__main__":
