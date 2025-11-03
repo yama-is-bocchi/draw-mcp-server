@@ -43,7 +43,7 @@ def get_draw_mcp_server(target_dir: str, host: str, port: int) -> FastMCP:
             # Execute PlantUML command to generate diagram
             subprocess.run(["plantuml", str(puml_file)], check=True)  # noqa: S603, S607
         except Exception as e:  # noqa: BLE001
-            return f"failed to draw: {e}"
+            return f"Diagram generation failed due to an unexpected error: {e}"
         else:
             # Return the URL to access the generated diagram
             return f"http://{host}:{port}/api/v1/data/{filename}"
