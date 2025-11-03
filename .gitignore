@@ -3,5 +3,4 @@
 .clineignore
 .clinerules
 **/__pycache__/**
-data
 .env
